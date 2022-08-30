@@ -29,7 +29,10 @@ struct SetGameView: View {
     
     var gameBody: some View {
         AspectVGrid(items: game.cardsOnTable, aspectRatio: 2/3) { card in
-            CardView(card: card)
+            CardView(card: card, matchedSuccessfully: game.matched)
+                .onTapGesture {
+                    game.choose(card)
+                }
         }
     }
     
@@ -55,17 +58,39 @@ struct SetGameView: View {
 struct CardView: View {
     let card: SetGame.Card
     
+    let matchedSuccessfully: Bool?
+    
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 20)
-                .fill()
-                .foregroundColor(.white)
-            RoundedRectangle(cornerRadius: 20)
-                .strokeBorder(lineWidth: 3)
-            Diamond()
+            VStack {
+                Spacer()
+                ForEach(0..<card.number.rawValue, id:\.self) { _ in
+                    Group {
+                        switch card.shape {
+                        case .shape1:
+                            Diamond().shading(card.shading)
+                        case .shape2:
+                            Ellipse().shading(card.shading)
+                        case .shape3:
+                            Rectangle().shading(card.shading)
+                        }
+                    }
+                    .aspectRatio(2/1, contentMode: .fit)
+                    .padding(.horizontal, CardConstants.cardsContentPadding)
+                }
+                Spacer()
+            }
         }
+        .cardify(isSelected: card.isSelected, matchedSuccessfully: matchedSuccessfully, color: card.color)
         .foregroundColor(.red)
-        .padding(2)
+        .padding(CardConstants.cardsPadding)
+    }
+    
+    private struct CardConstants {
+        static let cornerRadius: CGFloat = 10
+        static let lineWidth: CGFloat = 3
+        static let cardsPadding: CGFloat = 2
+        static let cardsContentPadding: CGFloat = 15
     }
 }
 

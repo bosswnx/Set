@@ -12,8 +12,13 @@ class SetGameViewModel: ObservableObject {
     @Published private var model = SetGame()
     
     var cardsOnTable: Array<SetGame.Card> {
-        model.cards.filter({ $0.isOnTable && !$0.isMatched })
+        model.cardsOnTable
     }
+    
+    var matched: Bool? {
+        model.matched
+    }
+    
     
     // MARK: - Intent
     
@@ -23,6 +28,10 @@ class SetGameViewModel: ObservableObject {
     
     func deal3MoreCards() {
         model.deal3MoreCards()
+    }
+    
+    func choose(_ card: SetGame.Card) {
+        model.choose(card)
     }
     
     
