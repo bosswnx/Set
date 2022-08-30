@@ -7,18 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		523F311628BCE44D0001F427 /* SetGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F311528BCE44D0001F427 /* SetGameViewModel.swift */; };
+		523F311828BCF6C80001F427 /* AspectVGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523F311728BCF6C80001F427 /* AspectVGrid.swift */; };
+		52676F3D28BCFF1500D2E3A2 /* Diamond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52676F3C28BCFF1500D2E3A2 /* Diamond.swift */; };
+		52676F3F28BDD5BC00D2E3A2 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52676F3E28BDD5BC00D2E3A2 /* Cardify.swift */; };
 		52B26A4628B7A6E7001E62BA /* SetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B26A4528B7A6E7001E62BA /* SetApp.swift */; };
-		52B26A4828B7A6E7001E62BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B26A4728B7A6E7001E62BA /* ContentView.swift */; };
+		52B26A4828B7A6E7001E62BA /* SetGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B26A4728B7A6E7001E62BA /* SetGameView.swift */; };
 		52B26A4A28B7A6EA001E62BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B26A4928B7A6EA001E62BA /* Assets.xcassets */; };
 		52B26A4D28B7A6EA001E62BA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B26A4C28B7A6EA001E62BA /* Preview Assets.xcassets */; };
+		52B26A5428B7C76A001E62BA /* SetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B26A5328B7C76A001E62BA /* SetGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		523F311528BCE44D0001F427 /* SetGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameViewModel.swift; sourceTree = "<group>"; };
+		523F311728BCF6C80001F427 /* AspectVGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectVGrid.swift; sourceTree = "<group>"; };
+		52676F3C28BCFF1500D2E3A2 /* Diamond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diamond.swift; sourceTree = "<group>"; };
+		52676F3E28BDD5BC00D2E3A2 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		52B26A4228B7A6E7001E62BA /* Set.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Set.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B26A4528B7A6E7001E62BA /* SetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetApp.swift; sourceTree = "<group>"; };
-		52B26A4728B7A6E7001E62BA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		52B26A4728B7A6E7001E62BA /* SetGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGameView.swift; sourceTree = "<group>"; };
 		52B26A4928B7A6EA001E62BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52B26A4C28B7A6EA001E62BA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		52B26A5328B7C76A001E62BA /* SetGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +62,12 @@
 			isa = PBXGroup;
 			children = (
 				52B26A4528B7A6E7001E62BA /* SetApp.swift */,
-				52B26A4728B7A6E7001E62BA /* ContentView.swift */,
+				52B26A5328B7C76A001E62BA /* SetGame.swift */,
+				523F311528BCE44D0001F427 /* SetGameViewModel.swift */,
+				52B26A4728B7A6E7001E62BA /* SetGameView.swift */,
+				52676F3E28BDD5BC00D2E3A2 /* Cardify.swift */,
+				52676F3C28BCFF1500D2E3A2 /* Diamond.swift */,
+				523F311728BCF6C80001F427 /* AspectVGrid.swift */,
 				52B26A4928B7A6EA001E62BA /* Assets.xcassets */,
 				52B26A4B28B7A6EA001E62BA /* Preview Content */,
 			);
@@ -137,8 +152,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52B26A4828B7A6E7001E62BA /* ContentView.swift in Sources */,
+				52676F3D28BCFF1500D2E3A2 /* Diamond.swift in Sources */,
+				52676F3F28BDD5BC00D2E3A2 /* Cardify.swift in Sources */,
+				52B26A4828B7A6E7001E62BA /* SetGameView.swift in Sources */,
+				52B26A5428B7C76A001E62BA /* SetGame.swift in Sources */,
 				52B26A4628B7A6E7001E62BA /* SetApp.swift in Sources */,
+				523F311828BCF6C80001F427 /* AspectVGrid.swift in Sources */,
+				523F311628BCE44D0001F427 /* SetGameViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
