@@ -66,13 +66,18 @@ struct CardView: View {
                 Spacer()
                 ForEach(0..<card.number.rawValue, id:\.self) { _ in
                     Group {
-                        switch card.shape {
-                        case .shape1:
-                            Diamond().shading(card.shading)
-                        case .shape2:
-                            Ellipse().shading(card.shading)
-                        case .shape3:
-                            Rectangle().shading(card.shading)
+                        ZStack {
+                            switch card.shape {
+                            case .shape1:
+                                Diamond().fill().foregroundColor(.white)
+                                Diamond().shading(card.shading)
+                            case .shape2:
+                                Ellipse().fill().foregroundColor(.white)
+                                Ellipse().shading(card.shading)
+                            case .shape3:
+                                Rectangle().fill().foregroundColor(.white)
+                                Rectangle().shading(card.shading)
+                            }
                         }
                     }
                     .aspectRatio(2/1, contentMode: .fit)
