@@ -15,6 +15,10 @@ class SetGameViewModel: ObservableObject {
         model.cardsOnTable
     }
     
+    var cardsInDeck: Array<SetGame.Card> {
+        model.cardsInDeck
+    }
+    
     var matched: Bool? {
         model.matched
     }

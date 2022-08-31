@@ -52,6 +52,7 @@ struct SetGameView: View {
         Button("Deal 3 More Cards") {
             game.deal3MoreCards()
         }
+        .disabled(game.cardsInDeck.isEmpty)
     }
 }
 
@@ -62,7 +63,7 @@ struct CardView: View {
     
     var body: some View {
         ZStack {
-            VStack {
+            VStack(spacing: -1) {
                 Spacer()
                 ForEach(0..<card.number.rawValue, id:\.self) { _ in
                     Group {
@@ -81,7 +82,7 @@ struct CardView: View {
                         }
                     }
                     .aspectRatio(2/1, contentMode: .fit)
-                    .padding(.horizontal, CardConstants.cardsContentPadding)
+                    .scaleEffect(0.8)
                 }
                 Spacer()
             }
@@ -92,9 +93,7 @@ struct CardView: View {
     }
     
     private struct CardConstants {
-        static let cornerRadius: CGFloat = 10
-        static let lineWidth: CGFloat = 3
-        static let cardsPadding: CGFloat = 2
+        static let cardsPadding: CGFloat = 3
         static let cardsContentPadding: CGFloat = 15
     }
 }

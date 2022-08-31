@@ -74,6 +74,7 @@ struct SetGame {
     
     mutating func deal3MoreCards() {
         var numberOfCardsRemaining: Int = cardsInDeck.isEmpty ? 0 : 3
+        var cardsNeedRemove: Array<SetGame.Card> = []
         cardsOnTable.indices.forEach { index in
             if cardsOnTable[index].isMatched {
                 if numberOfCardsRemaining > 0 {
@@ -81,14 +82,18 @@ struct SetGame {
                     cardsInDeck.removeFirst()
                     numberOfCardsRemaining -= 1
                 } else {
-                    cardsOnTable.remove(at: index)
+                    cardsNeedRemove.append(cardsOnTable[index])
                 }
             }
+        }
+        for card in cardsNeedRemove {
+            cardsOnTable.remove(at: cardsOnTable.firstIndex(where: { $0.id == card.id })!)
         }
         for _ in 0..<numberOfCardsRemaining {
             cardsOnTable.append(cardsInDeck.first!)
             cardsInDeck.removeFirst()
         }
+        matched = nil
     }
     
     struct Card: Hashable, Identifiable {
